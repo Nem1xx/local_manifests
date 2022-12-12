@@ -6,9 +6,6 @@
 
   <remote  name="mi-thorium"
            fetch="https://github.com/Mi-Thorium"/>
-		   
-  <remote  name="lineage"
-           fetch="https://github.com/LineageOS"/>
 
  <!-- Extras -->
   <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" remote="mi-sdm439" revision="lineage-18.1"/>
