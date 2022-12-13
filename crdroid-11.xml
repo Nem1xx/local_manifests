@@ -12,13 +12,14 @@
  
  <!-- Extras -->
   <remove-project name="LineageOS/android_packages_apps_FMRadio"/>
-  <remove-project name="crdroidandroid/android_system_core"/>
-  <remove-project name="crdroidandroid/android_vendor_crdroid"/>  
-  <project path="system/core" name="android_system_core" remote="nem1x" revision="cr-11.0"/>
-  <project path="vendor/lineage" name="android_vendor_crdroid" remote="mi-sdm439" revision="11.0"/>
   <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" remote="mi-sdm439" revision="lineage-18.1"/>
-  <project path="vendor/qcom/opensource/libfmjni" name="android_vendor_qcom_opensource_libfmjni" remote="lineage" revision="lineage-18.1"/>
 
+  <remove-project name="crdroidandroid/android_system_core"/>
+  <project path="system/core" name="android_system_core" remote="nem1x" revision="cr-11.0"/>
+
+  <remove-project name="crdroidandroid/android_vendor_crdroid"/>  
+  <project path="vendor/lineage" name="android_vendor_crdroid" remote="mi-sdm439" revision="11.0"/>
+  
  <!-- Common -->
   <project path="device/xiaomi/mithorium-common" name="android_device_xiaomi_mithorium-common"      remote="mi-thorium" revision="a11/master"/>
   <project path="vendor/xiaomi/mithorium-common" name="proprietary_vendor_xiaomi_mithorium-common"  remote="mi-thorium" revision="a11/master"/>
