@@ -18,7 +18,7 @@
   <project path="system/core" name="android_system_core" remote="nem1x" revision="cr-11.0"/>
 
   <remove-project name="crdroidandroid/android_vendor_crdroid"/>  
-  <project path="vendor/lineage" name="android_vendor_crdroid" remote="mi-sdm439" revision="11.0"/>
+  <project path="vendor/lineage" name="android_vendor_crdroid" remote="nem1x" revision="11.0"/>
   
  <!-- Common -->
   <project path="device/xiaomi/mithorium-common" name="android_device_xiaomi_mithorium-common"      remote="mi-thorium" revision="a11/master"/>
