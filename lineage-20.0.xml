@@ -9,15 +9,15 @@
 		   
 
  <!-- Extras -->
+  <remove-project name="LineageOS/android_packages_apps_FMRadio"/>
   <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" remote="mi-sdm439" revision="lineage-18.1"/>
-  <project path="vendor/qcom/opensource/libfmjni" name="android_vendor_qcom_opensource_libfmjni" remote="lineage" revision="lineage-18.1"/>
 
  <!-- Common -->
   <project path="device/xiaomi/mithorium-common" name="android_device_xiaomi_mithorium-common"      remote="mi-thorium" revision="a13/staging"/>
   <project path="vendor/xiaomi/mithorium-common" name="proprietary_vendor_xiaomi_mithorium-common"  remote="mi-thorium" revision="a12/master"/>
 
  <!-- Mi439 -->
-  <project path="kernel/xiaomi/sdm439" name="android_kernel_xiaomi_sdm439"    remote="mi-sdm439"  revision="a12/main"/>
+  <project path="kernel/xiaomi/sdm439" name="android_kernel_xiaomi_sdm439"    remote="mi-sdm439"  revision="a13/main"/>
   <project path="device/xiaomi/Mi439"  name="android_device_xiaomi_Mi439"      remote="mi-thorium" revision="a13/master"/>
   <project path="vendor/xiaomi/Mi439"  name="proprietary_vendor_xiaomi_Mi439"  remote="mi-thorium" revision="a11/master"/>
   <project path="hardware/mithorium-4.9"  name="android_hardware_mithorium-4.9"  remote="mi-thorium" revision="lineage-19.1-caf-msm8953"/>
