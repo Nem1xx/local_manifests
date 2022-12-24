@@ -20,6 +20,6 @@
   <project path="kernel/xiaomi/sdm439" name="android_kernel_xiaomi_sdm439"    remote="mi-sdm439"  revision="a12/main"/>
   <project path="device/xiaomi/Mi439"  name="android_device_xiaomi_Mi439"      remote="mi-thorium" revision="a13/master"/>
   <project path="vendor/xiaomi/Mi439"  name="proprietary_vendor_xiaomi_Mi439"  remote="mi-thorium" revision="a11/master"/>
-  <project path="hardware/mithorium-4.9"  name="android_hardware_mithorium-4.9"  remote="mi-thorium" revision="lineage-19.1-caf-msm8953"/>
+  <project path="hardware/mithorium-4.9"  name="android_hardware_mithorium-4.9"  remote="mi-thorium" revision="lineage-19.1-k4.9"/>
 
 </manifest>
