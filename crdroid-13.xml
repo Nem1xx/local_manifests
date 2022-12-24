@@ -11,7 +11,7 @@
            fetch="https://github.com/Nem1xx"/>
  
  <!-- Extras -->
-  <project path="vendor/qcom/opensource/libfmjni" name="android_vendor_qcom_opensource_libfmjni" remote="lineage" revision="lineage-18.1"/>
+  <project path="LineageOS/vendor/qcom/opensource/libfmjni" name="android_vendor_qcom_opensource_libfmjni" revision="lineage-18.1"/>
   <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" remote="mi-sdm439" revision="lineage-18.1"/>
 
   <remove-project name="crdroidandroid/android_system_core"/>
