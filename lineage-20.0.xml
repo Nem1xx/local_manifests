@@ -9,8 +9,8 @@
 		   
 
  <!-- Extras -->
-  <remove-project name="LineageOS/android_packages_apps_FMRadio"/>
   <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" remote="mi-sdm439" revision="lineage-18.1"/>
+  <project path="vendor/qcom/opensource/libfmjni" name="LineageOS/android_vendor_qcom_opensource_libfmjni" revision="lineage-18.1"/>
 
  <!-- Common -->
   <project path="device/xiaomi/mithorium-common" name="android_device_xiaomi_mithorium-common"      remote="mi-thorium" revision="a13/master"/>
