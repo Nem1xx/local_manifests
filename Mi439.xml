@@ -11,7 +11,7 @@
            fetch="https://github.com/Nem1xx"/>
 
  <!-- Extras -->
-  <project path="vendor/qcom/opensource/libfmjni" name="LineageOS/android_vendor_qcom_opensource_libfmjni" remote="github" revision="lineage-18.1"/>
+  <project path="vendor/qcom/opensource/libfmjni" name="LineageOS/android_vendor_qcom_opensource_libfmjni" remote="github" revision="lineage-20.0"/>
   <project path="packages/apps/RevampedFMRadio" name="iusmac/RevampedFMRadio" remote="github" revision="qcom"/>
 
  <!-- Hardware -->
