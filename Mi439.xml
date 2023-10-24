@@ -1,30 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <remote  name="jprimero"
+           fetch="https://github.com/Jprimero15"
+           revision="master" />
 
   <remote  name="mi-sdm439"
-           fetch="https://github.com/mi-sdm439"/>
+           fetch="https://github.com/mi-sdm439"
+           revision="lineage-18.1" />
 
   <remote  name="mi-thorium"
-           fetch="https://github.com/Mi-Thorium"/>
-		   
+           fetch="https://github.com/Mi-Thorium"
+           revision="a11/master" />
+
+ <!-- Dependencies -->
+  <project path="hardware/lineage/compat" name="android_hardware_lineage_compat" remote="mi-thorium" revision="lineage-18.1"/>
 
  <!-- Replacements -->
   <remove-project name="LineageOS/android_packages_apps_FMRadio"/>
   <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" remote="mi-sdm439" revision="lineage-18.1"/>
 
- <!-- Hardware -->
-  <project path="hardware/mithorium-4.9-q-display"  name="android_hardware_mithorium-4.9"  groups="device" remote="mi-thorium" revision="lineage-19.1-k4.9-q-display"/>
-  <project path="hardware/mithorium-4.9"  name="android_hardware_mithorium-4.9"  remote="mi-thorium" revision="lineage-18.1-k4.9"/>
-
  <!-- Common -->
-  <project path="device/xiaomi/mithorium-common" name="android_device_xiaomi_mithorium-common"      remote="mi-thorium" revision="a11/master"/>
-  <project path="vendor/xiaomi/mithorium-common" name="proprietary_vendor_xiaomi_mithorium-common"  remote="mi-thorium" revision="a11/master"/>
-  <project path="vendor/xiaomi/mithorium-common-graphics" name="proprietary_vendor_xiaomi_mithorium-common-graphics" remote="mi-thorium" revision="a11/master"/>
+  <project path="device/xiaomi/mithorium-common" name="android_device_xiaomi_mithorium-common"     groups="device" remote="mi-thorium"/>
+  <project path="vendor/xiaomi/mithorium-common" name="proprietary_vendor_xiaomi_mithorium-common" groups="device" remote="mi-thorium"/>
+  <project path="vendor/xiaomi/mithorium-common-graphics" name="proprietary_vendor_xiaomi_mithorium-common-graphics" groups="device" remote="mi-thorium" revision="a11/master"/>
+
+ <!-- SEPolicy -->
+  <project path="device/qcom/sepolicy-legacy-um_mithorium" name="android_device_qcom_sepolicy_mithorium" groups="qcom,pdk-qcom" remote="mi-thorium" revision="lineage-18.1-legacy-um"/>
+
+ <!-- Hardware -->
+  <project path="hardware/mithorium/common" name="android_hardware_mithorium_common" groups="device" remote="mi-thorium" revision="lineage">
+    <linkfile src="_Android.mk" dest="hardware/mithorium/Android.mk" />
+    <linkfile src="mithorium_qcom_hals.mk" dest="hardware/mithorium/mithorium_qcom_hals.mk" />
+
+    <linkfile src="guard-generic.bp" dest="hardware/mithorium/audio/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0/Android.bp" />
+    <linkfile src="guard-generic.bp" dest="hardware/mithorium/audio/lineage-18.1-caf-msm8953/Android.bp" />
+    <linkfile src="guard-generic.bp" dest="hardware/mithorium/display/LA.UM.8.6.2.r1-09500-89xx.0/Android.bp" />
+
+    <linkfile src="guard-qcom-qssi-display-lineage-18.1.bp" dest="hardware/mithorium/display/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0/Android.bp" />
+    <linkfile src="guard-qcom-qssi-display.mk"              dest="hardware/mithorium/display/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0/Android.mk" />
+
+    <linkfile src="guard-qcom-qssi-display-lineage-18.1.bp" dest="hardware/mithorium/display/lineage-18.1-caf-msm8953/Android.bp" />
+    <linkfile src="guard-qcom-qssi-display.mk"              dest="hardware/mithorium/display/lineage-18.1-caf-msm8953/Android.mk" />
+  </project>
+
+ <!-- Hardware - display-commonsys-intf -->
+  <project path="hardware/mithorium/display/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0/display" name="LineageOS/android_vendor_qcom_opensource_display-commonsys-intf" groups="qcom,pdk-qcom"/>
+  <project path="hardware/mithorium/display/lineage-18.1-caf-msm8953/display" name="LineageOS/android_vendor_qcom_opensource_display-commonsys-intf" groups="qcom,pdk-qcom"/>
+
+ <!-- Hardware - LA.UM.8.6.2 -->
+  <project path="hardware/mithorium/display/LA.UM.8.6.2.r1-09500-89xx.0/display" name="android_hardware_qcom_display_mithorium" groups="device" remote="mi-thorium" revision="mithorium/LA.UM.8.6.2.r1-09500-89xx.0"/>
+
+ <!-- Hardware - LA.UM.9.6.3 -->
+  <project path="hardware/mithorium/audio/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0/hal" name="android_hardware_qcom_audio_mithorium" groups="device" remote="mi-thorium" revision="mithorium/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0"/>
+  <project path="hardware/mithorium/media/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0/hal" name="android_hardware_qcom_media_mithorium" groups="device" remote="mi-thorium" revision="mithorium/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0"/>
+  <project path="hardware/mithorium/display/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0/hal" name="android_hardware_qcom_display_mithorium" groups="device" remote="mi-thorium" revision="mithorium/LA.UM.9.6.4.r1-05200-89xx.QSSI13.0"/>
+
+ <!-- Hardware - LineageOS (based on LA.UM.9.6.2.r1-04800-89xx.0 tag) -->
+  <project path="hardware/mithorium/media/lineage-18.1-caf-msm8953/hal" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" revision="lineage-18.1-caf-msm8953" />
+  <project path="hardware/mithorium/display/lineage-18.1-caf-msm8953/hal" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-18.1-caf-msm8953" />
 
  <!-- Mi439 -->
-  <project path="kernel/xiaomi/sdm439" name="Jprimero15/kernel_xiaomi_sdm439"  remote="github"     revision="master"/>
-  <project path="device/xiaomi/Mi439"  name="android_device_xiaomi_Mi439"      remote="mi-thorium" revision="a11/master"/>
-  <project path="vendor/xiaomi/Mi439"  name="proprietary_vendor_xiaomi_Mi439"  remote="mi-thorium" revision="a11/master"/>
-
+  <project path="device/xiaomi/Mi439"  name="android_device_xiaomi_Mi439"     groups="device" remote="mi-thorium"/>
+  <project path="vendor/xiaomi/Mi439"  name="proprietary_vendor_xiaomi_Mi439" groups="device" remote="mi-thorium"/>
+  <project path="kernel/xiaomi/sdm439"  name="kernel_xiaomi_sdm439" groups="device" remote="jprimero"/>
 
 </manifest>
